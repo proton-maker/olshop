@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EFT Accounts - Tracker</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header / Navigation -->
+        <header class="top-nav">
+            <div class="brand">
+                <i class="fa-solid fa-crosshairs"></i>
+                <h1>EFT Market</h1>
+            </div>
+            
+            <div class="stats-badge" id="stats-badge">
+                <span id="total-items">0</span> Offers Found
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Filter Section -->
+            <section class="controls-panel">
+                <div class="search-box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Cari penawaran (contoh: EOD, Unheard, dll)...">
+                </div>
+                
+                <div class="sort-box">
+                    <i class="fa-solid fa-sort"></i>
+                    <select id="sortSelect">
+                        <option value="price-asc">Harga: Termurah ke Termahal</option>
+                        <option value="price-desc">Harga: Termahal ke Termurah</option>
+                        <option value="hours-desc">Jam Main: Tertinggi ke Terendah</option>
+                        <option value="hours-asc">Jam Main: Terendah ke Tertinggi</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <div id="loader" class="loader-container">
+                <div class="spinner"></div>
+                <p>Memuat Data...</p>
+            </div>
+
+            <!-- Products Grid -->
+            <section class="products-grid" id="products-grid">
+                <!-- Data akan dirender ke sini oleh JS -->
+            </section>
+
+            <!-- Empty State (Hidden default) -->
+            <div id="empty-state" class="empty-state hidden">
+                <i class="fa-solid fa-ghost"></i>
+                <h3>Tidak ada hasil</h3>
+                <p>Coba gunakan kata kunci pencarian yang lain.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
